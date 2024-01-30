@@ -1,0 +1,79 @@
+* Malt Tutorial
+
+** Getting Started
+
+1. Install Emacs (skip if you have it already)
+
+2. Install Geiser:
+   - =M-x package-install geiser=
+
+3. Open a Racket file ending in .rkt
+
+4. Add require line:
+
+#+begin_src racket
+  (require malt)
+#+end_src
+
+5. Start Geiser mode with =M-x geiser-mode=
+
+6. Connect to Racket with =M-x geiser-connect-default=
+
+7. Evaluate code blocks with =C-c C-c= or full file with =C-c C-k=
+
+Geiser will now run the Racket process and allow evaluating Malt code. Some key bindings:
+
+- =C-c C-c=: Evaluate code block 
+- =C-c C-z=: Switch to REPL
+- =C-c C-k=: Load full file
+
+** Tensors
+Tensors are provided via the =tensor= function.
+
+#+begin_src racket
+  (define x 
+    (tensor 1 2 3))
+#+end_src
+
+Test tensor operations like addition:
+
+#+begin_src racket
+  (tensor-+ x x)
+#+end_src
+
+** Extended Operators
+Numeric operators are extended for tensor arguments: 
+
+#+begin_src racket
+  (define y 
+    (tensor 10 20 30))
+  
+  (+ x y)
+#+end_src
+
+** Gradient Descent
+Train models with =gradient-descent=:
+
+#+begin_src racket
+  (define theta 
+    (tensor 0 0))
+  
+  (gradient-descent 
+    (lambda (t) 
+      (sin (+ t t)))
+   theta)  
+#+end_src
+
+** Neural Network Layers
+Add layers with =dense-layer=: 
+
+#+begin_src racket
+  (dense-layer 3 10)
+#+end_src
+
+** Next Steps
+- Work through model examples
+- Inspect other Malt docs
+- Try modifying network code
+
+Let me know if any sections need more detail or code examples!

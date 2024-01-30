@@ -1,0 +1,21 @@
+#+TITLE: the-little-learner 
+#+AUTHOR: Daniel Friedman & Anurag Mendhekar
+
+* How do I work with the code examples?
+
+1. Install Racket by following instructions in the book Appendix
+   - Use the =Makefile= or setup script to get required packages
+2. Look at the chapter file naming convention 
+   - Files named like =ch01-lines-sleep-p018.rkt=
+3. Open files in DrRacket to work with examples
+   - Load =malt= package in files
+4. Follow the book structure and annotate code with your own notes
+5. Run examples like convolutional networks on supplied datasets
+6. Use supplied scripts to test and update code
+
+* Additional Resources
+
+- [[https://github.com/themetaschemer/malt][Malt Package Documentation]]
+- [[https://pkgs.racket-lang.org/package/malt][Racket Package Index]]
+- [[https://github.com/themetaschemer/malt][GitHub Repository]]
+
